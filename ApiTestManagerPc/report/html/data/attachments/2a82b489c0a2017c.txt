@@ -1,0 +1,7 @@
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/login.json
+time：0.09101
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/account/switch.json
+time：0.06
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/login/out.json
+time：0.045
+INFO     root:test_personal_center.py:76 用例成功：{'status': '200', 'message': '成功', 'data': True, 'issuccess': True}

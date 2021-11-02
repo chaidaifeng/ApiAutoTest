@@ -1,0 +1,39 @@
+######################################## 场景用例数据 ########################################
+# 个人中心-获取公司及个人信息
+get_account_info:
+  url: /api/company/account/info.json
+  method: GET
+  data:
+
+# 个人中心-修改密码
+update_pwd:
+  url: /api/auth/pwd/update.json
+  method: POST
+  data:
+    newPassword: '#newPassword#'
+
+# 个人中心-退出登录
+logout:
+  url: /api/auth/login/out.json
+  method: POST
+  data:
+
+
+
+######################################## 参数化用例 ########################################
+parametrize:
+  - case_name: 简历筛选-根据候选人和职位查询筛选记录数量
+    url: /api/recommend/count.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 基础信息
+    url: /api/basedata/version.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:

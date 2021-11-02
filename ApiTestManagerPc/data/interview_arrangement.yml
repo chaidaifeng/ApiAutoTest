@@ -1,0 +1,268 @@
+######################################## 场景用例数据 ########################################
+# 面试安排-数据模式-待面试列表
+get_interview_list:
+  url: /api/recommend/interview/manage/list.json
+  method: GET
+  data:
+    dataType: 1
+    timeType: 1
+    current: 1
+    pageSize: 20
+
+# 数据模式-获取简历详情中模板信息
+get_template:
+  url: /api/recommend/interview/result/info.json
+  method: GET
+  data:
+    recommendAssessId:
+    interviewId: '#interviewId#'
+    key:
+
+# 数据模式-获取简历详情中评价问题
+get_appraise_question:
+  url: /api/appraise/template/detail.json
+  method: GET
+  data:
+    appraiseTemplateId: '#appraiseTemplateId#'
+    key:
+
+# 数据模式-详情-操作面试
+interview:
+  url: /api/recommend/interview/manage/result/save.json
+  method: POST
+  data:
+    interviewId: '#interviewId#'
+    key: ''
+    appraiseJson:
+      - appraiseQuestionId: '#questionId#'
+        answer: '#questionItemDtoId#'
+        otherContent: ''
+      - appraiseQuestionId: '#questionRemarkId#'
+        answer: 通过
+        otherContent: ''
+
+# 面试安排-数据模式-列表中操作未面试
+list_no_interview:
+  url: /api/recommend/interview/batch/operate.json
+  method: POST
+  data:
+    interviewIds: '#interviewId#'
+    content: 未面试
+
+# 设置面试时间保存
+save_interview_date:
+  url: /api/interview/setting/save.json
+  method: POST
+  data:
+    interviewerId: '#interviewerId#'
+    type: 1
+    weekFlag: 0
+    interviewSettingJson:
+      - interviewDate: '#interviewDate#'
+        interviewTime: '08:00'
+
+
+######################################## 参数化用例 ########################################
+parametrize:
+  - case_name: 安排面试-数据模式-获取职位信息
+    url: /api/recommend/interview/job/list.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-tab签数量统计-待面试
+    url: /api/recommend/interview/manage/counts.json
+    method: GET
+    data:
+      dataType: 1
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-tab签数量统计-通过
+    url: /api/recommend/interview/manage/counts.json
+    method: GET
+    data:
+      dataType: 2
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-tab签数量统计-不通过
+    url: /api/recommend/interview/manage/counts.json
+    method: GET
+    data:
+      dataType: 3
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-tab签数量统计-待定
+    url: /api/recommend/interview/manage/counts.json
+    method: GET
+    data:
+      dataType: 4
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-tab签数量统计-未面试
+    url: /api/recommend/interview/manage/counts.json
+    method: GET
+    data:
+      dataType: 5
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-tab签数量统计-已取消
+    url: /api/recommend/interview/manage/counts.json
+    method: GET
+    data:
+      dataType: 6
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-筛选面试类型
+    url: /api/recommend/interview/timetype/group.json
+    method: GET
+    data:
+      dataType: 1
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-获取待面试列表的订单信息-今日及以后
+    url: /api/recommend/interview/manage/list.json
+    method: GET
+    data:
+      dataType: 1
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-获取待面试列表的订单信息-今日以前
+    url: /api/recommend/interview/manage/list.json
+    method: GET
+    data:
+      dataType: 1
+      timeType: 2
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 数据模式-面试类型数据
+    url: /api/recommend/interview/type/group.json
+    method: GET
+    data:
+      dataType: 1
+      timeType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 日历模式-获取面试负责人
+    url: /api/company/account/list.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 日历模式-获取面试地址
+    url: /api/recommend/interview/address.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 日历模式-获取面试官
+    url: /api/company/account/all/list.json
+    method: GET
+    data:
+      roleType: 3
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 日历模式-职位
+    url: /api/recommend/interview/job/list.json
+    method: GET
+    data:
+      status: 0
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 日历模式-职位
+    url: /api/recommend/interview/calendar.json
+    method: GET
+    data:
+      month: '#month#'    # 数据格式：20211010
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 设置面试时间-数据获取
+    url: /api/interview/setting/info.json
+    method: GET
+    data:
+      interviewerId: '#interviewerId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 设置面试时间-切换模式为可再一下时间约面
+    url: /api/interview/setting/info.json
+    method: GET
+    data:
+      type: 1
+      interviewerId: '#interviewerId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 设置面试时间-切换模式为不可再一下时间约面
+    url: /api/interview/setting/info.json
+    method: GET
+    data:
+      type: 2
+      interviewerId: '#interviewerId#'
+    expect:
+      status: '200'
+      data:
+
+
+

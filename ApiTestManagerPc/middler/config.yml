@@ -1,0 +1,74 @@
+project: ApiTestManagerPc
+set_env: test
+test:
+  host: https://10.21.0.65:443
+  login:
+    mobile: 13366666789
+    manager: 18100001111
+    crm_user: lihua@aimsen.com
+    crm_admin_user: liurenhong@hua-yong.com
+    password: test123
+    manager_pwd: test123
+    crm_password: test123
+    crm_admin_password: test123
+    apollo_mobile: lihua@aimsen.com
+    hunter_mobile: 15733198252
+    verify_code: 20211008
+uat:
+  host: https://47.111.170.206:443
+  login:
+    mobile: 13377776789
+    manager: 18100001111
+    crm_user: lihua@aimsen.com
+    crm_admin_user: liurenhong@hua-yong.com
+    password: hrsaas54329
+    manager_pwd: test123
+    crm_password: '123456'
+    crm_admin_password: huayong2020
+    apollo_mobile: lihua@aimsen.com
+    hunter_mobile: 15733198252
+    verify_code: 20211008
+prod:
+  host: https://47.96.109.164:443
+  login:
+    mobile: 13377776789
+    manager: 18100001111
+    crm_user: lihua@aimsen.com
+    crm_admin_user: liurenhong@hua-yong.com
+    password: hrsaas54329
+    manager_pwd: test123
+    crm_password: '123456'
+    crm_admin_password: huayong2020
+    apollo_mobile: lihua@aimsen.com
+    hunter_mobile: 15733198252
+    verify_code: 20211008
+dev:
+  host: https://10.21.0.16:443
+  login:
+    mobile: 13366666789
+    manager: 18100001111
+    crm_user: lihua@aimsen.com
+    crm_admin_user: liurenhong@hua-yong.com
+    password: test123
+    manager_pwd: test123
+    crm_password: test123
+    crm_admin_password: test123
+    apollo_mobile: lihua@aimsen.com
+    hunter_mobile: 15733198252
+    verify_code: 20211008
+headers:
+  pinpin_host: www.pinpin.com
+  pinpin_ats_host: s.pinpin.com
+  apollo_host: apollo2.aimsen.com
+  crm_host: crm.hua-yong.com
+  hunter_host: hunter.pinpin.com
+  website_host: vip.pinpin.com
+dataBase:
+  driverclassname: com.mysql.jdbc.Driver
+  url: jdbc:mysql://localhost:3306
+  username: root
+  password: root
+log_level: info
+des_secret_key: RUYUKEY1
+des_iv: RUYUKEY2
+set_host: debug

@@ -1,0 +1,61 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "testCase.test_personal_center",
+    "children" : [ {
+      "name" : "test_personal_center[data0]",
+      "uid" : "44bc2b08de3b2a1b",
+      "parentUid" : "3104f3f16fe9ab66a0057e22429d672c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634897976488,
+        "stop" : 1634897976524,
+        "duration" : 36
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_name': '简历筛选-根据候选人和职位查询筛选记录数量', 'url': '/api/recommend/count.json', 'method': 'GET', 'data': None, 'expect': {'status': '200', 'data': None}}" ]
+    }, {
+      "name" : "test_personal_center[data1]",
+      "uid" : "1ad356c1fa88a9b3",
+      "parentUid" : "3104f3f16fe9ab66a0057e22429d672c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634897976536,
+        "stop" : 1634897976579,
+        "duration" : 43
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ "{'case_name': '基础信息', 'url': '/api/basedata/version.json', 'method': 'GET', 'data': None, 'expect': {'status': '200', 'data': None}}" ]
+    }, {
+      "name" : "test_update_pwd",
+      "uid" : "c8dd2413cd3c721d",
+      "parentUid" : "3104f3f16fe9ab66a0057e22429d672c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634897976588,
+        "stop" : 1634897976641,
+        "duration" : 53
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "test_logout",
+      "uid" : "3e1364ef77e8aee9",
+      "parentUid" : "3104f3f16fe9ab66a0057e22429d672c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1634897976647,
+        "stop" : 1634897976986,
+        "duration" : 339
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "testCase.test_personal_center"
+  } ]
+}

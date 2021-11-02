@@ -1,0 +1,4 @@
+INFO     root:update_yml.py:24 {'newPassword': 'ajFLisVReGs='}匹配到的参数：ajFLisVReGs=
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/pwd/update.json
+time：0.05
+INFO     root:test_personal_center.py:62 用例成功：{'status': '200', 'message': '成功', 'data': True, 'issuccess': True}

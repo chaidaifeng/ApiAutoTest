@@ -1,0 +1,358 @@
+######################################## 场景用例数据 ########################################
+# 简历筛选-列表查询
+screening_list:
+  url: /api/recommend/assess/screen/list.json
+  method: GET
+  data:
+    current: 1
+    pageSize: 20
+
+# 简历筛选-批量筛选通过
+pass_resume:
+  url: /api/recommend/assess/result/batch/save.json
+  method: POST
+  data:
+    recommendAssessIds: '#recommendAssessIds#'
+    operateType: 1
+    remark: 操作通过
+
+# 简历筛选-批量筛选不通过
+fail_resume:
+  url: /api/recommend/assess/result/batch/save.json
+  method: POST
+  data:
+    recommendAssessIds: '#recommendAssessIds#'
+    operateType: 0
+    remark: 操作不通过
+
+# 简历筛选-批量筛选待定
+undetermined_resume:
+  url: /api/recommend/assess/result/batch/save.json
+  method: POST
+  data:
+    recommendAssessIds: '#recommendAssessIds#'
+    operateType: 2
+    remark: 操作待定
+
+# 简历初筛-简历详情
+recommend_info:
+  url: /api/recommend/info.json
+  method: GET
+  data:
+    recommendId: '#recommendId#'
+
+# 简历初筛-简历详情-操作通过
+pass_resume_details:
+  url: /api/recommend/assess/result/save.json
+  method: POST
+  data:
+    recommendAssessId: '#recommendAssessId#'
+    interviewId:
+    key:
+    operateType: 1
+    content: 通过
+
+# 简历初筛-简历详情-操作不通过
+fail_resume_details:
+  url: /api/recommend/assess/result/save.json
+  method: POST
+  data:
+    recommendAssessId: '#recommendAssessId#'
+    interviewId:
+    key:
+    operateType: 0
+    content: 不通过
+
+# 简历初筛-简历详情-待定
+undetermined_resume_details:
+  url: /api/recommend/assess/result/save.json
+  method: POST
+  data:
+    recommendAssessId: '#recommendAssessId#'
+    interviewId:
+    key:
+    operateType: 2
+    content: 待定
+
+######################################## 参数化用例 ########################################
+parametrize:
+  - case_name: 简历筛选-根据候选人和职位查询筛选记录数量
+    url: /api/recommend/count.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历筛选-tab签数量统计
+    url: /api/recommend/assess/count.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历筛选-获取通过列表的订单信息
+    url: /api/recommend/assess/filtered/list.json
+    method: GET
+    data:
+      assessResultType: 1
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历筛选-获取不通过列表的订单信息
+    url: /api/recommend/assess/filtered/list.json
+    method: GET
+    data:
+      assessResultType: 0
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历筛选-获取待定列表的订单信息
+    url: /api/recommend/assess/filtered/list.json
+    method: GET
+    data:
+      assessResultType: 2
+      current: 1
+      pageSize: 20
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-获取职位信息
+    url: /api/recommend/assess/job/list.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-获取人才库
+    url: /api/resume/library/list.json
+    method: GET
+    data:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-原始简历数量
+    url: /api/original/resume/count.json
+    method: GET
+    data:
+      resId: '#resId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-评估详情
+    url: /api/recommend/assess/info.json
+    method: GET
+    data:
+      recommendAssessId: '#recommendAssessId#'
+      interviewId:
+      key:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情
+    url: /api/recommend/info.json
+    method: GET
+    data:
+      recommendId: '#recommendId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-教育经历
+    url: /api/recommend/res/edu.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+      keyWords:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-项目经历
+    url: /api/recommend/res/project.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+      keyWords:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-语言能力
+    url: /api/recommend/res/language.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+      keyWords:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-证书
+    url: /api/recommend/res/trains.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-工作经历
+    url: /api/recommend/res/work.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+      keyWords:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-工作意向
+    url: /api/recommend/res/job/intention.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-作品
+    url: /api/recommend/res/product.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-阶段列表
+    url: /api/recruit/process/stage/list.json
+    method: GET
+    data:
+      recruitProcessId: '#recruitProcessId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-回复详情
+    url: /api/interview/recommend/answer/detail.json
+    method: GET
+    data:
+      recommendId: '#recommendId#'
+      resId: '#resId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-基础信息
+    url: /api/recommend/res/base/info.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+      recommendId: '#recommendId#'
+      keyWords:
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-猎头报告认证
+    url: /api/resume/detail/hunt/report/auth.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+      recommendId: '#recommendId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-招聘详情-节点
+    url: /api/recruitment/nodes.json
+    method: GET
+    data:
+      recommendId: '#recommendId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-招聘详情结果
+    url: /api/recruitment/result.json
+    method: GET
+    data:
+      recommendId: '#recommendId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-面试列表
+    url: /api/recommend/interviewer/list.json
+    method: GET
+    data:
+      recommendId: '#recommendId#'
+      recruitStageId: '#recruitStageId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-评估结果
+    url: /api/recommend/assess/simple/list.json
+    method: GET
+    data:
+      recommendId: '#recommendId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-备注
+    url: /api/recommend/remark/simple/list.json
+    method: GET
+    data:
+      current: 1
+      pageSize: 20
+      resumeId: '#resId#'
+      ppResumeId:
+      recommendId: '#recommendId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-附加信息
+    url: /api/resume/attach/list.json
+    method: GET
+    data:
+      resId: '#resId#'
+    expect:
+      status: '200'
+      data:
+
+  - case_name: 简历初筛-简历详情-新增附加信息
+    url: /api/resume/attach/save.json
+    method: GET
+    data:
+      resId: '#resId#'
+      ppResId:
+      type: 2
+      url: www.baidu.com
+    expect:
+      status: '200'
+      data:

@@ -1,0 +1,22 @@
+INFO     root:conftest.py:33 当前环境：test
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/login.json
+time：0.34702
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/account/switch.json
+time：0.048
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/login.json
+time：0.28402
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/account/switch.json
+time：0.055
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/login.json
+time：0.086
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/auth/account/switch.json
+time：0.042
+INFO     root:test_personal_center.py:36 参数化更新后的用例数据：{'case_name': '简历筛选-根据候选人和职位查询筛选记录数量', 'url': '/api/recommend/count.json', 'method': 'GET', 'data': None, 'expect': {'status': '200', 'data': None}}
+CRITICAL root:api_request.py:38 url：https://10.21.0.65:443/api/recommend/count.json
+time：0.034
+INFO     root:test_personal_center.py:44 接口响应：{'status': '200', 'message': '成功', 'data': 1325, 'issuccess': True}
+INFO     root:asert_contrast.py:34 进行验证code、data：
+逾期返回：200			实际返回：200
+INFO     root:asert_contrast.py:37 用例成功
+INFO     root:test_personal_center.py:49 用例成功：
+{'status': '200', 'message': '成功', 'data': 1325, 'issuccess': True}
